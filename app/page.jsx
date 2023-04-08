@@ -1,77 +1,22 @@
-import Image from "next/image";
-import folder from "./folder.svg";
-import { TbTrash } from "react-icons/tb";
+import InitialPage from "./components/InitialPage";
+import Categories from "./components/Categories";
+import Header from "./components/Header";
+import Tasks from "./components/Tasks";
+import AddButton from "./components/AddButton";
 
 export default function Home() {
   return (
     //The Page Content When No Task Added:
-    <main className="bg-white max-w-4xl my-12 mx-auto rounded-2xl p-6 pb-20 shadow-lg flex flex-col justify-center items-center space-y-6">
-      <div>
-        <Image src={folder} />
-      </div>
-      <h1 className="text-2xl">There's no task here!</h1>
-      <div className="flex space-x-3 items-center">
-        <a href="">
-          <span className="text-3xl text-blue-500">+</span>
-        </a>
-        <a href="">
-          <p className="text-blue-500 mt-1 hover:underline">Create new task</p>
-        </a>
-      </div>
-    </main>
+    <InitialPage />
 
-    //The Page Content When Some Tasks Added:
+    // The Page Content When Some Tasks Added:
     // <main className="bg-white max-w-4xl my-12 mx-auto rounded-2xl shadow-lg flex">
-    //   {/* SideBar */}
-    //   <div className="w-1/5 border-r">
-    //     <ul className="text-lg font-bold text-gray-600 flex flex-col space-y-3 pb-56 pt-20 ml-6">
-    //       <li className="hover:text-blue-500">
-    //         <a href=""> All</a>
-    //       </li>
-    //       <li className="hover:text-blue-500">
-    //         <a href="">Groceries</a>
-    //       </li>
-    //       <li className="hover:text-blue-500">
-    //         <a href="">College</a>
-    //       </li>
-    //       <li className="hover:text-blue-500">
-    //         <a href="">Payments</a>
-    //       </li>
-    //     </ul>
-    //   </div>
-    //   {/* SideBar */} {/* MainContent */}
+    //   <Categories />
     //   <div className="w-4/5 flex flex-col items-center px-6 relative">
-    //     <h1 className="text-3xl mt-6 mb-6">All Tasks</h1>
-
-    //     <input
-    //       type="text"
-    //       className="w-11/12 p-2 mb-12 bg-slate-100 rounded-xl"
-    //       placeholder="Search
-    //   something..."
-    //     />
-    //     {/* Tasks */}
-    //     <ul className="w-11/12">
-    //       <li className="flex justify-between border-b pb-4 mb-6">
-    //         <div className="flex">
-    //           <input
-    //             type="checkbox"
-    //             className="w-12 rounded-full bg-blue-500"
-    //           />
-    //           <p>Get a new helmet</p>
-    //         </div>
-
-    //         <div className="flex items-center space-x-6 text-blue-500">
-    //           <TbTrash size="1.5em" />
-    //           <span className="font-bold">Uncategorized</span>
-    //         </div>
-    //       </li>
-    //     </ul>
-    //     {/* Tasks */}
-    //     <button className=" absolute bottom-4 right-4 text-white text-3xl pb-0.5 bg-blue-500 rounded-full w-12 h-12 font-mono flex justify-center items-center font-medium border-solid border-white border-2">
-    //       +
-    //     </button>
+    //     <Header />
+    //     <Tasks />
+    //     <AddButton />
     //   </div>
-    //   {/* MainContent */}
     // </main>
   );
 }
