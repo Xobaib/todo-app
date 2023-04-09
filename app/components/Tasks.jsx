@@ -65,7 +65,7 @@ const Tasks = () => {
                       dispatch(removeTodo(item.id));
                     }}
                   />
-                  <span className="font-bold">
+                  <span className="font-bold capitalize">
                     {item.categoryData.trim().length === 0
                       ? "Uncategorized"
                       : item.categoryData}
