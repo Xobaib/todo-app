@@ -1,13 +1,15 @@
 "use client";
+import { addTodo } from "@/app/redux/action";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 const Form = () => {
   const [titleInput, setTitleInput] = useState("");
   const [categoryInput, setCategoryInput] = useState("");
   const router = useRouter();
-  console.log(titleInput);
-  console.log(categoryInput);
+  const dispatch = useDispatch();
+
   return (
     <>
       <div className="flex flex-col">
@@ -44,8 +46,9 @@ const Form = () => {
           className="bg-blue-500 py-3 px-16 rounded-2xl text-white"
           onClick={() => {
             if (titleInput.trim().length === 0) {
-              return alert("you must at least fill the title input");
+              return alert("you must fill the title input");
             } else {
+              dispatch(addTodo(titleInput, categoryInput));
               router.push("/");
             }
           }}
